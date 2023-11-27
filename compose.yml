@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  mysql:
+    container_name: "BasedeDatosMySQL"
+    image: mysql:8
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: proyecto
+      MYSQL_DATABASE: proyectoback
+    volumes:
+      - ./backendProyecto/dockercomposeconfig/init.sql:/docker-entrypoint-initdb.d/init.sql
+  proyectobackend:
+    container_name: "APIExpressySwagger"
+    build:
+      context: ./backendProyecto/
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: sa
+      MYSQL_PASSWORD: proyecto
+      MYSQL_DATABASE: proyectoback`
+  frontend:
+    container_name: Frontend
+    depends_on:
+      - proyectobackend
+    build: 
+      context: ./ProyectoFinal/ProyectoFinal/
+    ports:
+      - "8000:80"
+  
+networks:
+  mynetwork:
+    driver: bridge
