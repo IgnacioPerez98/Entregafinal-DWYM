@@ -4,3 +4,6 @@
 [submodule "ProyectoFinal"]
 	path = ProyectoFinal
 	url = https://github.com/JoseVarela8/ProyectoFinal.git
+[submodule "proyectoFront"]
+	path = proyectoFront
+	url = https://github.com/MilagrosKucharski/ProyectoFinal-e4ff8d249abe498fe6b1ab91648cb642a2863029.git
