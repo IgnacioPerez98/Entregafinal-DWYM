@@ -14,7 +14,7 @@ git clone --recurse-submodules https://github.com/IgnacioPerez98/Entregafinal-DW
 * Tener docker abierto
 * En la raiz ejecutar : docker compose up -d
 
-### Ajustar la IPV4 estatica en para el websocket
+#### Ajustar la IPV4 estatica para el websocket
 * Estar todos los dispositivos en la misma red
 * Poner tu IPV4 en ws/app.js linea 13  sin cambiar el puerto
 * Poner tu IPV4 en el front ProyectoFinal/src/app/servicios/controlador-juego.service.ts linea 314 sin cambiar el puerto 
